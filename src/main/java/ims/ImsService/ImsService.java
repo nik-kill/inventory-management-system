@@ -77,7 +77,7 @@ public class ImsService {
         if(dest==null) dest = new StockItem(pid, toWCode, 0);
 
         item.decrease(qty);
-        item.increase(qty);
+        dest.increase(qty);
         repository.save(item);
         repository.save(dest);
         repository.record(StockMovement.transfer(pid,fromWCode, toWCode,qty));
