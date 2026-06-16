@@ -25,11 +25,11 @@ public class StockMovement {
     }
 
     public static StockMovement out(String pid, String warehouse, int qty){
-        return new StockMovement(MovementType.IN, pid, warehouse, null, qty, Instant.now());
+        return new StockMovement(MovementType.OUT, pid, warehouse, null, qty, Instant.now());
     }
 
     public static StockMovement transfer(String pid, String from, String to, int qty){
-        return new StockMovement(MovementType.IN, pid, from, to, qty, Instant.now());
+        return new StockMovement(MovementType.TRANSFER, pid, from, to, qty, Instant.now());
     }
 
     public MovementType getType() {
